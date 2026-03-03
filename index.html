@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumaiya Islam Hafsa | Portfolio</title>
+    
+    <!-- ===== PREMIUM FAVICON WITH SIGNAL WAVE ===== -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%233b82f6'/%3E%3Cstop offset='100%25' stop-color='%2310b981'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23g)' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M20 35 Q35 20, 50 30 T80 25' stroke='%23ffffff' stroke-width='4' fill='none' stroke-linecap='round' opacity='0.9'/%3E%3Ctext x='22' y='68' font-family='Arial' font-size='38' font-weight='900' fill='%23ffffff'%3ESIH%3C/text%3E%3C/svg%3E">
+    
+    <!-- Apple Touch Icon - Premium Gradient SIH -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%233b82f6'/%3E%3Cstop offset='100%25' stop-color='%2310b981'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23g)'/%3E%3Cpath d='M25 35 Q40 25, 50 30 T75 25' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' opacity='0.8'/%3E%3Ctext x='18' y='68' font-family='Arial' font-size='42' font-weight='900' fill='white'%3ESIH%3C/text%3E%3C/svg%3E">
+    
+    <!-- Android / Chrome Icons -->
+    <link rel="icon" sizes="192x192" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2310b981'/%3E%3Ctext x='18' y='70' font-family='Arial' font-size='48' font-weight='900' fill='white'%3ESIH%3C/text%3E%3C/svg%3E">
+    
+<!-- ===== PWA MANIFEST - COMMUNICATION THEME ===== -->
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22Sumaiya%20Islam%20Hafsa%22%2C%22short_name%22%3A%22Comm%20Engineer%22%2C%22description%22%3A%22Electrical%20and%20Communication%20Engineering%20Portfolio%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22browser%22%2C%22background_color%22%3A%22%23020617%22%2C%22theme_color%22%3A%22%23020617%22%2C%22icons%22%3A%5B%5D%7D">
+
+<!-- ===== NO INSTALL PROMPT - JUST META TAGS ===== -->
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Comm Portfolio">
+<meta name="theme-color" content="#020617">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@400;600;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-deep: #020617; 
+            --bg-panel: rgba(15, 23, 42, 0.8);
+            --royal-blue: #3b82f6;
+            --emerald: #10b981; 
+            --posh-white: #f8fafc;
+            --text-muted: #94a3b8;
+            --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+            --accent-glow: 0 0 20px rgba(59, 130, 246, 0.3);
+
+            --font-head: 'Dancing Script', cursive;
+            --font-tech: 'JetBrains Mono', monospace;
+            --font-body: 'Rajdhani', sans-serif;
+            --font-elegant: 'Cormorant Garamond', serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { 
+            scroll-behavior: smooth; 
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--posh-white);
+            font-family: var(--font-body);
+            display: flex;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* ===== PREMIUM SIH PRELOADER WITH COMMUNICATION THEME ===== */
+        #sih-preloader {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #020617;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            z-index: 99999;
+            transition: opacity 0.2s ease-out, visibility 0.2s;
+        }
+
+        #sih-preloader.preloader-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .pulse-container {
+            position: relative;
+            width: 120px; height: 120px;
+            display: flex; justify-content: center; align-items: center;
+        }
+
+        .signal-pulse {
+            position: absolute;
+            width: 100%; height: 100%;
+            border: 2px solid #3b82f6;
+            border-radius: 50%;
+            animation: signal-expand 1.5s infinite;
+            opacity: 0;
+        }
+
+        .signal-pulse:nth-child(2) {
+            border-color: #10b981;
+            animation-delay: 0.3s;
+        }
+
+        @keyframes signal-expand {
+            0% { transform: scale(0.4); opacity: 0; }
+            30% { opacity: 0.5; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 5px #3b82f6; }
+            50% { text-shadow: 0 0 15px #10b981; }
+            100% { text-shadow: 0 0 5px #3b82f6; }
+        }
+
+        .loader-logo-text {
+            font-family: 'Arial', sans-serif;
+            font-weight: 900;
+            font-size: 2.5rem;
+            color: #3b82f6;
+            z-index: 2;
+            animation: textGlow 1.5s infinite;
+        }
+
+        /* Signal Strength Bars */
+        .signal-strength {
+            display: flex;
+            gap: 5px;
+            margin-top: 20px;
+            justify-content: center;
+            height: 40px;
+            align-items: flex-end;
+        }
+
+        .signal-bar {
+            width: 8px;
+            height: 10px;
+            background: #2d3748;
+            border-radius: 2px;
+            transition: all 0.1s ease;
+        }
+
+        /* Frequency Scanner */
+        .freq-scanner {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: #3b82f6;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            animation: scan 0.3s infinite;
+        }
+
+        @keyframes scan {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        .tech-stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            color: #94a3b8;
+        }
+
+        .stat-item-small {
+            text-align: center;
+            min-width: 50px;
+        }
+
+        .stat-value {
+            color: #10b981;
+            font-weight: bold;
+            font-size: 0.7rem;
+        }
+
+        .loader-status {
+            margin-top: 15px;
+            color: #94a3b8;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Scroll progress bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--royal-blue), var(--emerald));
+            z-index: 1000;
+            transition: width 0.1s ease;
+            box-shadow: var(--accent-glow);
+        }
+
+        .grid-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+        }
+
+        /* desktop navigation */
+        .nav-container {
+            width: 280px;
+            background: rgba(2, 6, 23, 0.85);
+            border-right: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: fixed;
+            height: 100vh;
+            z-index: 100;
+            backdrop-filter: blur(10px) saturate(180%);
+            -webkit-backdrop-filter: blur(10px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .brand h1 {
+            font-family: var(--font-head);
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #fff, var(--royal-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        /* Elegant tagline with Cormorant Garamond */
+        .desktop-tagline {
+            font-family: var(--font-elegant);
+            font-size: 0.9rem;
+            font-weight: 500;
+            font-style: italic;
+            color: var(--emerald);
+            letter-spacing: 0.3px;
+            line-height: 1.5;
+            margin-bottom: 0.25rem;
+            opacity: 0.9;
+            text-shadow: 0 0 5px rgba(16, 185, 129, 0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 2rem;
+        }
+
+        .nav-item {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 10px;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 0;
+            background: linear-gradient(180deg, var(--royal-blue), var(--emerald));
+            border-radius: 3px;
+            transition: height 0.3s ease;
+        }
+
+        .nav-item.active::before {
+            height: 70%;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--posh-white);
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+
+        .nav-item.active { color: var(--royal-blue); }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .social-icon {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+        .social-icon:hover { color: var(--emerald); transform: scale(1.1); }
+
+        .mobile-only { display: none; }
+
+        /* main content */
+        .main-wrapper {
+            margin-left: 280px;
+            flex: 1;
+            padding: 4rem 5rem;
+            width: calc(100% - 280px);
+        }
+
+        section {
+            margin-bottom: 6rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            scroll-margin-top: 100px;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger card animations */
+        section.visible .card:nth-child(1) { transition-delay: 0.1s; }
+        section.visible .card:nth-child(2) { transition-delay: 0.2s; }
+        section.visible .card:nth-child(3) { transition-delay: 0.3s; }
+        section.visible .card:nth-child(4) { transition-delay: 0.4s; }
+
+        h2 {
+            font-family: var(--font-head);
+            font-size: 3.5rem;
+            color: var(--royal-blue);
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .card {
+            background: var(--bg-panel);
+            border: var(--glass-border);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px) saturate(180%);
+            -webkit-backdrop-filter: blur(10px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4), var(--accent-glow);
+        }
+
+        .card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+            background: linear-gradient(90deg, var(--royal-blue), var(--emerald));
+        }
+
+        h3 {
+            color: var(--emerald);
+            margin: 0 0 1.5rem 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h3 i {
+            font-size: 1.8rem;
+            color: var(--royal-blue);
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+        }
+
+        .highlight { color: var(--royal-blue); font-weight: 700; }
+        .emerald-text { color: var(--emerald); }
+
+        /* Tech badge improvements */
+        .tech-badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.08);
+            color: var(--royal-blue);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-family: var(--font-tech);
+            font-size: 0.85rem;
+            margin: 0 8px 10px 0;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+
+        .tech-badge::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+            z-index: -1;
+        }
+
+        .tech-badge:hover {
+            border-color: var(--emerald);
+            transform: translateY(-2px);
+            color: var(--emerald);
+        }
+
+        .tech-badge:hover::before {
+            width: 200px;
+            height: 200px;
+        }
+
+        /* Achievement Stats */
+        .achievement-stats {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem 2rem;
+            background: rgba(59, 130, 246, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--emerald);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: var(--font-head);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-family: var(--font-tech);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Featured Work */
+        #featured .card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.95));
+        }
+
+        #featured .card:hover i {
+            transform: scale(1.1) rotate(5deg);
+            transition: transform 0.3s ease;
+        }
+
+        /* Better mobile touch */
+        @media (max-width: 900px) {
+            .nav-item:active {
+                transform: scale(0.95);
+                background: rgba(59, 130, 246, 0.15);
+                border-radius: 8px;
+                transition: all 0.1s ease;
+            }
+            
+            .card:active {
+                transform: scale(0.98);
+                opacity: 0.9;
+                transition: all 0.1s ease;
+            }
+            
+            .tech-badge:active {
+                transform: scale(0.95);
+                background: rgba(16, 185, 129, 0.2);
+                transition: all 0.1s ease;
+            }
+
+            .social-icon:active {
+                transform: scale(0.9);
+                color: var(--royal-blue);
+            }
+
+            .stat-item:active {
+                transform: scale(0.95);
+            }
+        }
+
+        .skill-row { 
+            display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem; 
+            position: relative;
+        }
+
+        .skill-row:hover .skill-meta span:last-child {
+            transform: scale(1.1);
+            color: var(--emerald);
+        }
+
+        .skill-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: var(--bg-panel);
+            filter: blur(0);
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+
+        .skill-icon[loading="lazy"] {
+            filter: blur(5px);
+        }
+
+        .skill-icon.loaded {
+            filter: blur(0);
+        }
+
+        .skill-row:hover .skill-icon {
+            transform: scale(1.1);
+        }
+
+        .skill-data { flex-grow: 1; }
+        .skill-meta { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.9rem; font-family: var(--font-tech); }
+        .progress-track { height: 8px; background: rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; }
+        
+        .progress-fill {
+            height: 100%; width: 0;
+            background: linear-gradient(90deg, var(--royal-blue), var(--emerald));
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255,255,255,0.2), 
+                transparent
+            );
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* volunteer inline logos */
+        .timeline-item {
+            border-left: 2px solid var(--royal-blue);
+            padding-left: 25px; margin-bottom: 2.5rem; position: relative;
+        }
+
+        .timeline-item::before {
+            content: ''; position: absolute; left: -6px; top: 6px; width: 10px; height: 10px;
+            background: var(--bg-deep); border: 2px solid var(--royal-blue); border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+            }
+        }
+
+        .role-date { font-family: var(--font-tech); color: var(--royal-blue); font-size: 0.85rem; }
+        .role-title { font-size: 1.3rem; font-weight: 700; color: #fff; margin: 5px 0; }
+
+        .club-inline {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0 8px;
+        }
+        .club-inline-logo {
+            width: 40px; height: 40px;
+            background: #fff; border-radius: 50%; padding: 0;
+            object-fit: cover; border: 2px solid var(--emerald);
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+        }
+        .club-inline-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--posh-white);
+        }
+
+        /* Mobile layout */
+        @media (max-width: 900px) {
+            body { flex-direction: column; }
+
+            .nav-container {
+                width: 100%;
+                height: auto;
+                position: fixed;
+                top: 0; left: 0;
+                padding: 8px 12px;
+                background: rgba(2, 6, 23, 0.98);
+                border-right: none;
+                border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                backdrop-filter: blur(12px);
+                z-index: 200;
+            }
+
+            .brand { flex: 1 1 auto; }
+            .brand h1 {
+                font-size: 1rem;
+                background: linear-gradient(90deg, #ffffff, #7aa9ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 2px;
+            }
+
+            .desktop-tagline { display: none; }
+            .mobile-tagline {
+                display: block;
+                font-family: var(--font-elegant);
+                font-size: 0.6rem;
+                font-style: italic;
+                color: var(--emerald);
+                line-height: 1.2;
+                margin-top: 2px;
+            }
+
+            .social-links {
+                margin: 0;
+                padding: 0;
+                border: none;
+                gap: 10px;
+            }
+            .social-icon { font-size: 1rem; }
+
+            .nav-links {
+                position: fixed;
+                left: 0;
+                top: 65px;
+                width: 45px;
+                background: rgba(2, 6, 23, 0.95);
+                backdrop-filter: blur(8px);
+                border-right: 1px solid rgba(59, 130, 246, 0.3);
+                border-top: 1px solid rgba(59, 130, 246, 0.2);
+                border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 12px 0;
+                gap: 18px;
+                z-index: 150;
+                border-radius: 0 12px 12px 0;
+            }
+
+            .nav-item {
+                padding: 6px 0;
+                font-size: 0;
+                color: var(--text-muted);
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+                transform: none !important;
+            }
+            
+            .nav-item i {
+                font-size: 1.2rem;
+                transition: color 0.3s ease, text-shadow 0.3s ease;
+            }
+            
+            .nav-item.active i {
+                color: var(--royal-blue);
+                text-shadow: 0 0 8px var(--royal-blue);
+            }
+
+            .nav-item:hover {
+                transform: none !important;
+            }
+
+            .nav-item:hover i {
+                color: var(--posh-white);
+            }
+
+            .main-wrapper {
+                margin-left: 45px;
+                width: calc(100% - 45px);
+                padding: 80px 0.8rem 1.5rem 0.8rem;
+            }
+
+            .card {
+                padding: 1.2rem;
+                margin-bottom: 1.2rem;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            h2 { 
+                font-size: 2rem; 
+                margin-bottom: 1.2rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+
+            h3 i {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .achievement-stats {
+                gap: 0.8rem;
+                margin: 1.5rem 0;
+            }
+
+            .stat-item {
+                padding: 0.8rem 1rem;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            .stat-label {
+                font-size: 0.7rem;
+            }
+
+            .skill-row {
+                gap: 10px;
+            }
+
+            .skill-icon {
+                width: 35px;
+                height: 35px;
+            }
+
+            .skill-meta {
+                font-size: 0.8rem;
+            }
+
+            .tech-badge {
+                font-size: 0.75rem;
+                padding: 4px 10px;
+            }
+
+            .timeline-item {
+                padding-left: 20px;
+            }
+
+            .role-title {
+                font-size: 1.1rem;
+            }
+
+            .club-inline-name {
+                font-size: 1rem;
+            }
+
+            .club-inline-logo {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        /* Hide nav item text on desktop, show only icons */
+        @media (min-width: 901px) {
+            .nav-item i { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== PREMIUM SIH PRELOADER WITH COMMUNICATION THEME ===== -->
+<div id="sih-preloader">
+    <div class="pulse-container">
+        <div class="signal-pulse"></div>
+        <div class="signal-pulse"></div>
+        <div class="loader-logo-text">SIH</div>
+    </div>
+    
+    <!-- Signal Strength Bars -->
+    <div class="signal-strength">
+        <div class="signal-bar"></div>
+        <div class="signal-bar"></div>
+        <div class="signal-bar"></div>
+        <div class="signal-bar"></div>
+        <div class="signal-bar"></div>
+    </div>
+    
+    <!-- Frequency Scanner -->
+    <div class="freq-scanner">⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤</div>
+    
+    <!-- Tech Stats -->
+    <div class="tech-stats">
+        <div class="stat-item-small">
+            <div class="stat-value" id="snr-value">23dB</div>
+            <div>SNR</div>
+        </div>
+        <div class="stat-item-small">
+            <div class="stat-value" id="ber-value">1e-3</div>
+            <div>BER</div>
+        </div>
+        <div class="stat-item-small">
+            <div class="stat-value" id="freq-value">2.4G</div>
+            <div>FREQ</div>
+        </div>
+    </div>
+    
+    <div class="loader-status" id="status-text">SDR INIT</div>
+</div>
+
+<!-- Scroll progress bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<div class="grid-bg"></div>
+
+<nav class="nav-container">
+    <div class="brand">
+        <h1>Sumaiya Islam Hafsa</h1>
+        <div class="mobile-tagline mobile-only">Don't let your success make noise.</div>
+        <div class="mobile-tagline mobile-only">Let your success be a clean amplified signal.</div>
+        <div class="desktop-tagline">Don't let your success make noise.</div>
+        <div class="desktop-tagline">Let your success be a clean amplified signal</div>
+    </div>
+
+    <div class="nav-links">
+        <a href="#about" class="nav-item active"><i class="fas fa-user"></i> About</a>
+        <a href="#education" class="nav-item"><i class="fas fa-graduation-cap"></i> Education</a>
+        <a href="#skills" class="nav-item" id="skills-link"><i class="fas fa-tools"></i> Skills</a>
+        <a href="#research" class="nav-item"><i class="fas fa-chart-simple"></i> Research</a>
+        <a href="#featured" class="nav-item"><i class="fas fa-star"></i> Featured</a>
+        <a href="#volunteer" class="nav-item"><i class="fas fa-hand-holding-heart"></i> Volunteer</a>
+    </div>
+
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/sumaiyaislamhafsa" target="_blank" class="social-icon" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:sumaiyaislamhafsa20@gmail.com" class="social-icon" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+</nav>
+
+<div class="main-wrapper">
+
+    <!-- ABOUT section -->
+    <section id="about" class="visible">
+        <h2>About Me</h2>
+        <div class="card">
+            <p>Being a privileged student in Dhaka, I got the chance to use the latest technologies at a very early stage—around 10 or 12 years ago. I always wondered how a computer uses electricity to help me draw things I like and print them.</p>
+            <p>Later, being able to use Modems and 3G data, I was fascinated: <strong>"How do my messages reach my relatives in Australia so fast?"</strong></p>
+            <p>All these curiosities, along with my affection towards mathematics, led me to ask which degree could take me into the world of computers and communication. The answer was <span class="highlight">Electrical and Electronics Engineering (EEE)</span>—and it has been one of the best decisions of my life. Today, I am graduating as a <strong class="emerald-text">Communication Major</strong> with knowledge of how a computer runs its programs and how different communication systems work.</p>
+            <p>The journey from wondering about a message reaching Australia to designing a LAPS with SDR communicating to LEO satellites has been truly fascinating.</p>
+        </div>
+
+        <!-- Achievement Stats -->
+        <div class="achievement-stats">
+            <div class="stat-item">
+                <div class="stat-number" style="color: var(--royal-blue);">5+</div>
+                <div class="stat-label">Research Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" style="color: var(--emerald);">4</div>
+                <div class="stat-label">Clubs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" style="color: var(--royal-blue);">2+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION section -->
+    <section id="education">
+        <h2>Education</h2>
+        <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap;">
+                <div>
+                    <h3>B.Sc. in Electrical and Electronic Engineering</h3>
+                    <p class="role-date" style="font-size:1.1rem; margin-bottom:10px;">Major in Communication</p>
+                </div>
+                <span class="tech-badge" style="background:rgba(16, 185, 129, 0.1); color:var(--emerald); border-color:var(--emerald);">121/140 credits completed</span>
+            </div>
+            <hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+            <p style="margin-bottom:0.5rem; color:#fff;">Key Coursework:</p>
+            <div style="margin-top: 10px;">
+                <span class="tech-badge">Microprocessor & Interfacing</span>
+                <span class="tech-badge">Digital Communication Lab</span>
+                <span class="tech-badge">Capstone Project I, II, III</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS section -->
+    <section id="skills">
+        <h2>Technical Skills</h2>
+
+        <!-- Software Defined Radio -->
+        <div class="card">
+            <h3><i class="fas fa-satellite-dish"></i> Software Defined Radio</h3>
+            <div class="skill-row">
+                <img src="rtlsdr.png" alt="RTL-SDR" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=SDR'">
+                <div class="skill-data">
+                    <div class="skill-meta"><span>Simplex (RTL-SDR, Nooelec)</span><span>70%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="70%"></div></div>
+                </div>
+            </div>
+            <div class="skill-row">
+                <img src="hackrf.png" alt="HackRF" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=Hack'">
+                <div class="skill-data">
+                    <div class="skill-meta"><span>Half-Duplex (HackRF)</span><span>70%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="70%"></div></div>
+                </div>
+            </div>
+            <div class="skill-row">
+                <img src="limesdr.png" alt="LimeSDR" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=Lime'">
+                <div class="skill-data">
+                    <div class="skill-meta"><span>Duplex (LimeSDR Mini, USRP B200)</span><span>60%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="60%"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Programming & Microcontrollers -->
+        <div class="card">
+            <h3><i class="fas fa-microchip"></i> Programming & Microcontrollers</h3>
+            <div class="skill-row">
+                <img src="c.png" alt="C Programming" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=C'">
+                <div class="skill-data">
+                    <div class="skill-meta"><span>C Programming</span><span>85%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="85%"></div></div>
+                </div>
+            </div>
+            <div class="skill-row">
+                <img src="matlab.png" alt="MATLAB" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=MAT'">
+                <div class="skill-data">
+                    <div class="skill-meta"><span>MATLAB</span><span>35%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="35%"></div></div>
+                </div>
+            </div>
+            <div class="skill-row">
+                <img src="stm32.png" alt="STM32" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=STM'">
+                <div class="skill-data">
+                    <div class="skill-meta"><span>STM32 CubeIDE</span><span>15%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="15%"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Software & Tools -->
+        <div class="card">
+            <h3><i class="fas fa-gear"></i> Software & Tools</h3>
+            <div class="skill-row">
+                <img src="gnuradio.png" alt="GNU Radio" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=GNU'">
+                <div class="skill-data">
+                    <div class="skill-meta"><span>GNU Radio</span><span>90%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="90%"></div></div>
+                </div>
+            </div>
+            <div class="skill-row">
+                <img src="matlab.png" alt="MATLAB" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=MAT'">
+                <div class="skill-data">
+                    <div class="skill-meta"><span>MATLAB Satellite Link Budget</span><span>65%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="65%"></div></div>
+                </div>
+            </div>
+            <div class="skill-row">
+                <img src="proteus.png" alt="Proteus" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=Pro'">
+                <div class="skill-data">
+                    <div class="skill-meta"><span>Proteus</span><span>78%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="78%"></div></div>
+                </div>
+            </div>
+            <div class="skill-row">
+                <img src="cadence.png" alt="Cadence" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=Cad'">
+                <div class="skill-data">
+                    <div class="skill-meta"><span>Cadence</span><span>5%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="5%"></div></div>
+                </div>
+            </div>
+            <div class="skill-row">
+                <img src="packettracer.png" alt="Cisco Packet Tracer" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=PT'">
+                <div class="skill-data">
+                    <div class="skill-meta"><span>Cisco Packet Tracer</span><span>15%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="15%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEARCH section -->
+    <section id="research">
+        <h2>Research & Goals</h2>
+        <div class="card">
+            <h3>Fields of Interest</h3>
+            <div style="display: flex; flex-wrap: wrap;">
+                <span class="tech-badge">Non-Terrestrial Network (NTN)</span>
+                <span class="tech-badge">Wireless Communication</span>
+                <span class="tech-badge">Signal Processing (Biomedical & Digital)</span>
+                <span class="tech-badge">Fractional Fourier Transform</span>
+                <span class="tech-badge">Antenna Array</span>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Future Vision</h3>
+            <p>My goal is to work on unified field projects, where we can provide healthcare and education services with robust <span class="highlight">NTN communication</span>.</p>
+            <hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+            <h3>Current Research</h3>
+            <p>Capstone Research: <strong>LAPS with SDR communicating to LEO Satellites</strong>.</p>
+        </div>
+    </section>
+
+    <!-- FEATURED WORK section -->
+    <section id="featured">
+        <h2>Featured Work</h2>
+        <div class="card">
+            <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 250px;">
+                    <h3>LAPS with SDR</h3>
+                    <p class="role-date">Capstone Research · 2024</p>
+                    <p>High-altitude platform station communicating with LEO satellites using Software Defined Radio.</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="tech-badge">SDR</span>
+                        <span class="tech-badge">LEO</span>
+                        <span class="tech-badge">GNU Radio</span>
+                    </div>
+                </div>
+                <div style="flex: 1; text-align: center;">
+                    <i class="fas fa-satellite" style="font-size: 5rem; color: var(--royal-blue); opacity: 0.5;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VOLUNTEER section -->
+    <section id="volunteer">
+        <h2>Volunteer Experience</h2>
+
+        <!-- UIU Social Services Club – Event Management Head -->
+        <div class="timeline-item">
+            <span class="role-date">February 2023 – February 2024</span>
+            <div class="role-title">Event Management Head</div>
+            <div class="club-inline">
+                <img src="uiussc.png" alt="SSC" class="club-inline-logo" loading="lazy" onerror="this.src='https://placehold.co/40x40/10b981/FFF?text=SSC'">
+                <span class="club-inline-name">UIU Social Services Club</span>
+            </div>
+            <p>Held a leadership role as the Head of Event Management within the UIU Social Services Club, overseeing the planning and execution of events aimed at making a positive impact on the community.</p>
+            <p><strong>Accomplishments:</strong></p>
+            <ul style="color: #cbd5e1; margin-left: 1.2rem;">
+                <li>Created a vibrant and impactful booth display, attracting attention and inspiring empathy among event attendees.</li>
+                <li>Demonstrated strong organizational and leadership skills in coordinating a successful event.</li>
+            </ul>
+        </div>
+
+        <!-- UIU Social Services Club – General Member -->
+        <div class="timeline-item">
+            <span class="role-date">June 2022 – February 2023</span>
+            <div class="role-title">General Member</div>
+            <div class="club-inline">
+                <img src="uiussc.png" alt="SSC" class="club-inline-logo" loading="lazy" onerror="this.src='https://placehold.co/40x40/10b981/FFF?text=SSC'">
+                <span class="club-inline-name">UIU Social Services Club</span>
+            </div>
+            <p>Actively participated as a General Member of the UIU Social Services Club, contributing to the club's mission of making a positive impact on the community. Collaborated with fellow club members to plan and execute two successful community service events.</p>
+            <p><strong>Accomplishments:</strong></p>
+            <ul style="color: #cbd5e1; margin-left: 1.2rem;">
+                <li>Led a team of volunteers during all the events, fostering a collaborative and supportive atmosphere.</li>
+                <li>Successfully increased the number of donors for the Blood Donation Campaign, contributing to a significant rise in donated units.</li>
+            </ul>
+        </div>
+
+        <!-- UIU Model United Nations Club -->
+        <div class="timeline-item">
+            <span class="role-date">May 2023 – September 2023</span>
+            <div class="role-title">Asst. Head of Branding & Promotion (Acting)</div>
+            <div class="club-inline">
+                <img src="uiumunc.png" alt="MUN" class="club-inline-logo" loading="lazy" onerror="this.src='https://placehold.co/40x40/10b981/FFF?text=MUN'">
+                <span class="club-inline-name">UIU Model United Nations Club</span>
+            </div>
+            <p>As the Assistant Head of the Branding and Promotion Team at the UIU MUNC, I was pivotal in enhancing our club's online presence and promoting our annual Mock MUN conference. During my tenure, I gained experience analyzing various clubs to improve the content on our social media platforms.</p>
+            <p><strong>Accomplishments:</strong></p>
+            <ul style="color: #cbd5e1; margin-left: 1.2rem;">
+                <li>I conducted in-depth research and analysis of content from different companies and clubs to identify trends and best practices. This analysis informed our content creation strategy, resulting in more engaging and relevant posts for our audience.</li>
+                <li>I spearheaded video and written content creation efforts, ensuring that our social media handles offered a wide range of content to cater to different preferences.</li>
+                <li>I led a team of two dedicated individuals, providing guidance, motivation, and direction to ensure our branding and promotion efforts were effective.</li>
+                <li>In addition to my primary role, I actively contributed to the decoration team and conference management team.</li>
+            </ul>
+        </div>
+
+        <!-- UIU Computer Club -->
+        <div class="timeline-item">
+            <span class="role-date">May 2022 – August 2022</span>
+            <div class="role-title">General Member</div>
+            <div class="club-inline">
+                <img src="uiuccl.png" alt="CCL" class="club-inline-logo" loading="lazy" onerror="this.src='https://placehold.co/40x40/10b981/FFF?text=CCL'">
+                <span class="club-inline-name">UIU Computer Club</span>
+            </div>
+            <p>As the General Member, I got the opportunity to take part in one of the activities, anchoring, which I really enjoy.</p>
+            <p><strong>Accomplishments:</strong></p>
+            <ul style="color: #cbd5e1; margin-left: 1.2rem;">
+                <li>Hosted two major events of UIU computer club and one is the grand orientation of the club which is also the biggest orientation of all clubs.</li>
+            </ul>
+        </div>
+    </section>
+
+    <div style="text-align: center; color: var(--text-muted); padding-bottom: 2rem; font-size: 0.9rem;">
+        &copy; 2026 Sumaiya Islam Hafsa. All signals received. 
+    </div>
+
+</div>
+
+<script>
+ // ===== COMMUNICATION PRELOADER (1.00s) =====
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('sih-preloader');
+    const status = document.getElementById('status-text');
+    
+    // Extended communication messages for 1 second
+    const messages = [
+        "Initializing SDR...",
+        "Scanning frequencies...",
+        "FFT processing...",
+        "Demodulating QPSK...",
+        "SNR: 23 dB",
+        "Bit error rate: 0.001",
+        "Establishing link...",
+        "Signal acquired!"
+    ];
+    
+    // Signal strength animation - slower and smoother
+    const signalBars = document.querySelectorAll('.signal-bar');
+    let strength = 0;
+    
+    const strengthInterval = setInterval(() => {
+        strength = (strength + 1) % 5;
+        signalBars.forEach((bar, index) => {
+            if (index <= strength) {
+                bar.style.background = 'linear-gradient(180deg, #3b82f6, #10b981)';
+                bar.style.height = (12 + (index * 6)) + 'px';
+            } else {
+                bar.style.background = '#2d3748';
+                bar.style.height = '8px';
+            }
+        });
+    }, 150); // Slower signal updates
+    
+    // Tech stats with more variations
+    const snrEl = document.getElementById('snr-value');
+    const berEl = document.getElementById('ber-value');
+    const freqEl = document.getElementById('freq-value');
+    
+    const snrValues = ['18dB', '21dB', '23dB', '25dB', '28dB', '30dB', '32dB', '35dB'];
+    const berValues = ['1e-2', '5e-3', '1e-3', '5e-4', '1e-4', '5e-5', '1e-5', '1e-6'];
+    const freqValues = ['2.4G', '5.8G', '1.2G', '900M', '433M', '868M', '2.1G', '3.5G'];
+    
+    let statIndex = 0;
+    const statInterval = setInterval(() => {
+        statIndex = (statIndex + 1) % 8;
+        if (snrEl) snrEl.innerText = snrValues[statIndex];
+        if (berEl) berEl.innerText = berValues[statIndex];
+        if (freqEl) freqEl.innerText = freqValues[statIndex];
+    }, 120); // Stats update every 120ms
+    
+    // Message sequence - 8 messages over 880ms
+    let i = 0;
+    const messageInterval = setInterval(() => {
+        if (i < messages.length) {
+            status.innerText = messages[i];
+            i++;
+        } else {
+            clearInterval(messageInterval);
+            clearInterval(strengthInterval);
+            clearInterval(statInterval);
+            // Wait 120ms after last message then hide
+            setTimeout(() => {
+                preloader.classList.add('preloader-hidden');
+            }, 120);
+        }
+    }, 110); // 110ms per message = 880ms total + 120ms = 1000ms (1 second)
+});
+
+    // Service Worker for PWA
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            const swScript = `
+                self.addEventListener('install', e => e.waitUntil(
+                    caches.open('sih-v1').then(c => c.addAll(['/']))
+                ));
+                self.addEventListener('fetch', e => e.respondWith(
+                    caches.match(e.request).then(r => r || fetch(e.request))
+                ));
+            `;
+            
+            const blob = new Blob([swScript], { type: 'application/javascript' });
+            const swUrl = URL.createObjectURL(blob);
+            
+            navigator.serviceWorker.register(swUrl).catch(err => {});
+        });
+    }
+
+    function animateSkills() {
+        const bars = document.querySelectorAll('.progress-fill');
+        bars.forEach(bar => {
+            bar.style.transition = 'width 1.5s cubic-bezier(0.2, 1, 0.4, 1)';
+            bar.style.width = bar.getAttribute('data-width');
+        });
+    }
+
+    function resetAndAnimateSkills() {
+        const bars = document.querySelectorAll('.progress-fill');
+        bars.forEach(bar => {
+            bar.style.transition = 'none';
+            bar.style.width = '0%';
+        });
+        setTimeout(animateSkills, 100);
+    }
+
+    document.getElementById('skills-link')?.addEventListener('click', resetAndAnimateSkills);
+
+    // Scroll progress bar
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('scrollProgress').style.width = scrolled + '%';
+    });
+
+    // Intersection Observer
+    const observerOptions = { root: null, rootMargin: '-50px 0px', threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                if (entry.target.id === 'skills') animateSkills();
+                
+                document.querySelectorAll('.nav-item').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + entry.target.id) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+    
+    window.addEventListener('load', () => {
+        if (document.getElementById('skills').classList.contains('visible')) animateSkills();
+        
+        document.querySelectorAll('.skill-icon').forEach(img => {
+            if (img.complete) img.classList.add('loaded');
+            else img.addEventListener('load', () => img.classList.add('loaded'));
+        });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('.nav-item').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const offset = 80;
+                const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - offset;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
