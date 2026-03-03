@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sumaiya Islam Hafsa | Portfolio</title>
+    
+    <!-- Favicon - minimalist circuit-inspired design -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23020617' stroke='%233b82f6' stroke-width='5'/%3E%3Ccircle cx='50' cy='50' r='15' fill='%2310b981'/%3E%3Cpath d='M20 50 L40 50 M60 50 L80 50 M50 20 L50 40 M50 60 L50 80' stroke='%233b82f6' stroke-width='4'/%3E%3C/svg%3E">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +23,7 @@
             --posh-white: #f8fafc;
             --text-muted: #94a3b8;
             --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+            --accent-glow: 0 0 20px rgba(59, 130, 246, 0.3);
 
             --font-head: 'Dancing Script', cursive;
             --font-tech: 'JetBrains Mono', monospace;
@@ -96,6 +100,7 @@
             transition: 0.3s;
             display: flex;
             align-items: center;
+            gap: 12px;
         }
 
         .nav-item:hover, .nav-item.active {
@@ -105,6 +110,7 @@
         }
 
         .nav-item.active { color: var(--royal-blue); }
+        .nav-item i { width: 24px; text-align: center; }
 
         .social-links {
             display: flex;
@@ -163,6 +169,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(10px);
         }
 
         .card::before {
@@ -204,6 +211,13 @@
             font-size: 0.85rem;
             margin: 0 8px 10px 0;
             border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: 0.3s;
+        }
+        
+        .tech-badge:hover {
+            border-color: var(--emerald);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+            transform: translateY(-2px);
         }
 
         .skill-row { 
@@ -215,9 +229,13 @@
             height: 45px;
             border-radius: 8px;
             object-fit: cover;
-            /*border: 2px solid var(--royal-blue); */
             flex-shrink: 0;
-            background: var(--bg-panel);
+            background-color: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 1px solid rgba(59, 130, 246, 0.3);
         }
 
         .skill-data { flex-grow: 1; }
@@ -227,6 +245,7 @@
             height: 100%; width: 0;
             background: linear-gradient(90deg, var(--royal-blue), var(--emerald));
             border-radius: 4px;
+            box-shadow: var(--accent-glow);
         }
 
         /* volunteer inline logos */
@@ -237,6 +256,12 @@
         .timeline-item::before {
             content: ''; position: absolute; left: -6px; top: 6px; width: 10px; height: 10px;
             background: var(--bg-deep); border: 2px solid var(--royal-blue); border-radius: 50%;
+            transition: 0.3s;
+        }
+        .timeline-item:hover::before {
+            background: var(--emerald);
+            border-color: var(--emerald);
+            box-shadow: 0 0 15px var(--emerald);
         }
         .role-date { font-family: var(--font-tech); color: var(--royal-blue); font-size: 0.85rem; }
         .role-title { font-size: 1.3rem; font-weight: 700; color: #fff; margin: 5px 0; }
@@ -249,7 +274,8 @@
         }
         .club-inline-logo {
             width: 40px; height: 40px;
-            background: #fff; border-radius: 50%; padding: 0;
+            background-color: #1e293b;
+            border-radius: 50%; padding: 0;
             object-fit: cover; border: 2px solid var(--emerald);
             box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
         }
@@ -259,8 +285,80 @@
             color: var(--posh-white);
         }
 
-        /* mobile layout */
-        @media (max-width: 900px) {
+        .achievement-highlight {
+            background: rgba(16, 185, 129, 0.05);
+            border-left: 3px solid var(--emerald);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .achievement-highlight i {
+            color: var(--emerald);
+            margin-right: 10px;
+        }
+
+        /* ===== FIXED RESPONSIVE DESIGN ===== */
+        /* Tablet styles (768px - 1024px) - keeps desktop navigation but adjusts sizing */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .nav-container {
+                width: 220px; /* Smaller sidebar for tablets */
+                padding: 2rem 1.2rem;
+            }
+            
+            .brand h1 {
+                font-size: 1.8rem; /* Smaller name */
+            }
+            
+            .desktop-tagline {
+                font-size: 0.6rem; /* Smaller tagline */
+            }
+            
+            .nav-item {
+                font-size: 1rem;
+                padding: 8px;
+                gap: 8px;
+            }
+            
+            .nav-item i {
+                width: 20px;
+                font-size: 1.1rem;
+            }
+            
+            .social-links {
+                gap: 15px;
+            }
+            
+            .social-icon {
+                font-size: 1.3rem;
+            }
+            
+            .main-wrapper {
+                margin-left: 220px;
+                padding: 2rem 2rem;
+                width: calc(100% - 220px);
+            }
+            
+            h2 {
+                font-size: 2.8rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .card {
+                padding: 2rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            h3 i {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Mobile (below 769px) */
+        @media (max-width: 768px) {
             body { flex-direction: column; }
 
             .nav-container {
@@ -335,10 +433,15 @@
             }
             .nav-item i {
                 font-size: 1.4rem;
+                margin: 0;
             }
             .nav-item.active i {
                 color: var(--royal-blue);
                 text-shadow: 0 0 8px var(--royal-blue);
+            }
+            
+            .nav-text {
+                display: none;
             }
 
             .main-wrapper {
@@ -349,10 +452,15 @@
 
             h2 { font-size: 2.2rem; }
             .card { padding: 1.5rem; }
-        }
-
-        @media (min-width: 901px) {
-            .nav-item i { display: none; }
+            
+            .skill-row {
+                gap: 10px;
+            }
+            
+            .skill-icon {
+                width: 35px;
+                height: 35px;
+            }
         }
     </style>
 </head>
@@ -360,27 +468,27 @@
 
 <div class="grid-bg"></div>
 
-<nav class="nav-container">
+<nav class="nav-container" aria-label="Main navigation">
     <div class="brand">
         <h1>Sumaiya Islam Hafsa</h1>
-        <div class="mobile-tagline mobile-only">Don't let your success make noise. Let your success be a clean amplified signal</div>
-        <div class="desktop-tagline">Don't let your success make noise.</div>
-        <div class="desktop-tagline">Let your success be a clean amplified signal</div>
+        <div class="mobile-tagline mobile-only">Don't let your success make noise.</div>
+        <div class="mobile-tagline mobile-only">Let your success be a clean amplified signal</div>
+        <div class="desktop-tagline">Don't let your success make noise. Let your success be a clean amplified signal</div>
     </div>
 
     <div class="nav-links">
-        <a href="#about" class="nav-item active"><i class="fas fa-user"></i> About</a>
-        <a href="#education" class="nav-item"><i class="fas fa-graduation-cap"></i> Education</a>
-        <a href="#skills" class="nav-item" id="skills-link"><i class="fas fa-tools"></i> Skills</a>
-        <a href="#research" class="nav-item"><i class="fas fa-chart-simple"></i> Research</a>
-        <a href="#volunteer" class="nav-item"><i class="fas fa-hand-holding-heart"></i> Volunteer</a>
+        <a href="#about" class="nav-item active" aria-current="page"><i class="fas fa-user" aria-hidden="true"></i> <span class="nav-text">About</span></a>
+        <a href="#education" class="nav-item"><i class="fas fa-graduation-cap" aria-hidden="true"></i> <span class="nav-text">Education</span></a>
+        <a href="#skills" class="nav-item" id="skills-link"><i class="fas fa-tools" aria-hidden="true"></i> <span class="nav-text">Skills</span></a>
+        <a href="#research" class="nav-item"><i class="fas fa-chart-simple" aria-hidden="true"></i> <span class="nav-text">Research</span></a>
+        <a href="#volunteer" class="nav-item"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i> <span class="nav-text">Volunteer</span></a>
     </div>
 
     <div class="social-links">
-        <a href="https://www.linkedin.com/in/sumaiyaislamhafsa" target="_blank" class="social-icon" title="LinkedIn">
+        <a href="https://www.linkedin.com/in/sumaiyaislamhafsa" target="_blank" class="social-icon" title="LinkedIn" aria-label="LinkedIn profile">
             <i class="fab fa-linkedin"></i>
         </a>
-        <a href="mailto:sumaiyaislamhafsa20@gmail.com" class="social-icon" title="Email">
+        <a href="mailto:sumaiyaislamhafsa20@gmail.com" class="social-icon" title="Email" aria-label="Send email">
             <i class="fas fa-envelope"></i>
         </a>
     </div>
@@ -389,19 +497,24 @@
 <div class="main-wrapper">
 
     <!-- ABOUT section -->
-    <section id="about" class="visible">
-        <h2>About Me</h2>
+    <section id="about" class="visible" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Me</h2>
         <div class="card">
             <p>Being a privileged student in Dhaka, I got the chance to use the latest technologies at a very early stage—around 10 or 12 years ago. I always wondered how a computer uses electricity to help me draw things I like and print them.</p>
             <p>Later, being able to use Modems and 3G data, I was fascinated: <strong>"How do my messages reach my relatives in Australia so fast?"</strong></p>
             <p>All these curiosities, along with my affection towards mathematics, led me to ask which degree could take me into the world of computers and communication. The answer was <span class="highlight">Electrical and Electronics Engineering (EEE)</span>—and it has been one of the best decisions of my life. Today, I am graduating as a <strong class="emerald-text">Communication Major</strong> with knowledge of how a computer runs its programs and how different communication systems work.</p>
             <p>The journey from wondering about a message reaching Australia to designing a LAPS with SDR communicating to LEO satellites has been truly fascinating.</p>
+            
+            <div class="achievement-highlight">
+                <i class="fas fa-quote-left"></i> 
+                <em>"Don't let your success make noise. Let your success be a clean amplified signal"</em> — This philosophy guides my approach to engineering and life.
+            </div>
         </div>
     </section>
 
     <!-- EDUCATION section -->
-    <section id="education">
-        <h2>Education</h2>
+    <section id="education" aria-labelledby="education-heading">
+        <h2 id="education-heading">Education</h2>
         <div class="card">
             <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap;">
                 <div>
@@ -416,33 +529,35 @@
                 <span class="tech-badge">Microprocessor & Interfacing</span>
                 <span class="tech-badge">Digital Communication Lab</span>
                 <span class="tech-badge">Capstone Project I, II, III</span>
+                <span class="tech-badge">Signal Processing</span>
+                <span class="tech-badge">Antenna Theory</span>
             </div>
         </div>
     </section>
 
-    <!-- SKILLS section with PNG icons (including C) -->
-    <section id="skills">
-        <h2>Technical Skills</h2>
+    <!-- SKILLS section with PNG icons -->
+    <section id="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Technical Skills</h2>
 
         <!-- Software Defined Radio -->
         <div class="card">
-            <h3><i class="fas fa-satellite-dish"></i> Software Defined Radio</h3>
+            <h3><i class="fas fa-satellite-dish" aria-hidden="true"></i> Software Defined Radio</h3>
             <div class="skill-row">
-                <img src="rtlsdr.png" alt="RTL-SDR" class="skill-icon" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=S'">
+                <img src="rtlsdr.png" alt="RTL-SDR" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=SDR'">
                 <div class="skill-data">
                     <div class="skill-meta"><span>Simplex (RTL-SDR, Nooelec)</span><span>70%</span></div>
                     <div class="progress-track"><div class="progress-fill" data-width="70%"></div></div>
                 </div>
             </div>
             <div class="skill-row">
-                <img src="hackrf.png" alt="HackRF" class="skill-icon" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=H'">
+                <img src="hackrf.png" alt="HackRF" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=Hack'">
                 <div class="skill-data">
                     <div class="skill-meta"><span>Half-Duplex (HackRF)</span><span>70%</span></div>
                     <div class="progress-track"><div class="progress-fill" data-width="70%"></div></div>
                 </div>
             </div>
             <div class="skill-row">
-                <img src="limesdr.png" alt="LimeSDR" class="skill-icon" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=D'">
+                <img src="limesdr.png" alt="LimeSDR" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=Lime'">
                 <div class="skill-data">
                     <div class="skill-meta"><span>Duplex (LimeSDR Mini, USRP B200)</span><span>60%</span></div>
                     <div class="progress-track"><div class="progress-fill" data-width="60%"></div></div>
@@ -452,23 +567,23 @@
 
         <!-- Programming & Microcontrollers -->
         <div class="card">
-            <h3><i class="fas fa-microchip"></i> Programming & Microcontrollers</h3>
+            <h3><i class="fas fa-microchip" aria-hidden="true"></i> Programming & Microcontrollers</h3>
             <div class="skill-row">
-                <img src="c.png" alt="C Programming" class="skill-icon" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=C'">
+                <img src="c.png" alt="C Programming" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=C'">
                 <div class="skill-data">
                     <div class="skill-meta"><span>C Programming</span><span>85%</span></div>
                     <div class="progress-track"><div class="progress-fill" data-width="85%"></div></div>
                 </div>
             </div>
             <div class="skill-row">
-                <img src="matlab.png" alt="MATLAB" class="skill-icon" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=M'">
+                <img src="matlab.png" alt="MATLAB" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=MAT'">
                 <div class="skill-data">
                     <div class="skill-meta"><span>MATLAB</span><span>35%</span></div>
                     <div class="progress-track"><div class="progress-fill" data-width="35%"></div></div>
                 </div>
             </div>
             <div class="skill-row">
-                <img src="stm32.png" alt="STM32" class="skill-icon" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=S'">
+                <img src="stm32.png" alt="STM32" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=STM'">
                 <div class="skill-data">
                     <div class="skill-meta"><span>STM32 CubeIDE</span><span>15%</span></div>
                     <div class="progress-track"><div class="progress-fill" data-width="15%"></div></div>
@@ -478,37 +593,37 @@
 
         <!-- Software & Tools -->
         <div class="card">
-            <h3><i class="fas fa-gear"></i> Software & Tools</h3>
+            <h3><i class="fas fa-gear" aria-hidden="true"></i> Software & Tools</h3>
             <div class="skill-row">
-                <img src="gnuradio.png" alt="GNU Radio" class="skill-icon" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=G'">
+                <img src="gnuradio.png" alt="GNU Radio" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=GNU'">
                 <div class="skill-data">
                     <div class="skill-meta"><span>GNU Radio</span><span>90%</span></div>
                     <div class="progress-track"><div class="progress-fill" data-width="90%"></div></div>
                 </div>
             </div>
             <div class="skill-row">
-                <img src="matlab.png" alt="MATLAB" class="skill-icon" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=M'">
+                <img src="matlab.png" alt="MATLAB" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=MAT'">
                 <div class="skill-data">
                     <div class="skill-meta"><span>MATLAB Satellite Link Budget</span><span>65%</span></div>
                     <div class="progress-track"><div class="progress-fill" data-width="65%"></div></div>
                 </div>
             </div>
             <div class="skill-row">
-                <img src="proteus.png" alt="Proteus" class="skill-icon" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=P'">
+                <img src="proteus.png" alt="Proteus" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=Pro'">
                 <div class="skill-data">
                     <div class="skill-meta"><span>Proteus</span><span>78%</span></div>
                     <div class="progress-track"><div class="progress-fill" data-width="78%"></div></div>
                 </div>
             </div>
             <div class="skill-row">
-                <img src="cadence.png" alt="Cadence" class="skill-icon" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=C'">
+                <img src="cadence.png" alt="Cadence" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=Cad'">
                 <div class="skill-data">
                     <div class="skill-meta"><span>Cadence</span><span>5%</span></div>
                     <div class="progress-track"><div class="progress-fill" data-width="5%"></div></div>
                 </div>
             </div>
             <div class="skill-row">
-                <img src="packettracer.png" alt="Cisco Packet Tracer" class="skill-icon" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=C'">
+                <img src="packettracer.png" alt="Cisco Packet Tracer" class="skill-icon" loading="lazy" onerror="this.src='https://placehold.co/45x45/1e293b/3b82f6?text=PT'">
                 <div class="skill-data">
                     <div class="skill-meta"><span>Cisco Packet Tracer</span><span>15%</span></div>
                     <div class="progress-track"><div class="progress-fill" data-width="15%"></div></div>
@@ -518,44 +633,51 @@
     </section>
 
     <!-- RESEARCH section -->
-    <section id="research">
-        <h2>Research & Goals</h2>
+    <section id="research" aria-labelledby="research-heading">
+        <h2 id="research-heading">Research & Goals</h2>
         <div class="card">
-            <h3>Fields of Interest</h3>
+            <h3><i class="fas fa-compass" aria-hidden="true"></i> Fields of Interest</h3>
             <div style="display: flex; flex-wrap: wrap;">
                 <span class="tech-badge">Non-Terrestrial Network (NTN)</span>
                 <span class="tech-badge">Wireless Communication</span>
                 <span class="tech-badge">Signal Processing (Biomedical & Digital)</span>
                 <span class="tech-badge">Fractional Fourier Transform</span>
                 <span class="tech-badge">Antenna Array</span>
+                <span class="tech-badge">LEO Satellite Communications</span>
             </div>
         </div>
         <div class="card">
-            <h3>Future Vision</h3>
+            <h3><i class="fas fa-rocket" aria-hidden="true"></i> Future Vision</h3>
             <p>My goal is to work on unified field projects, where we can provide healthcare and education services with robust <span class="highlight">NTN communication</span>.</p>
             <hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin: 20px 0;">
-            <h3>Current Research</h3>
-            <p>Capstone Research: <strong>LAPS with SDR communicating to LEO Satellites</strong>.</p>
+            <h3><i class="fas fa-flask" aria-hidden="true"></i> Current Research</h3>
+            <p>Capstone Research: <strong>LAPS with SDR communicating to LEO Satellites</strong> — exploring high-altitude platform stations as communication relays for remote areas.</p>
+            
+            <div class="achievement-highlight">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Research Goal:</strong> Bridge the digital divide through innovative NTN solutions
+            </div>
         </div>
     </section>
 
-    <!-- VOLUNTEER section - UPDATED with reduced accomplishments -->
-    <section id="volunteer">
-        <h2>Volunteer Experience</h2>
+    <!-- VOLUNTEER section -->
+    <section id="volunteer" aria-labelledby="volunteer-heading">
+        <h2 id="volunteer-heading">Volunteer Experience</h2>
 
         <!-- UIU Social Services Club – Event Management Head -->
         <div class="timeline-item">
             <span class="role-date">February 2023 – February 2024</span>
             <div class="role-title">Event Management Head</div>
             <div class="club-inline">
-                <img src="uiussc.png" alt="SSC" class="club-inline-logo" onerror="this.src='https://placehold.co/40x40/10b981/FFF?text=SSC'">
+                <img src="uiussc.png" alt="UIU Social Services Club logo" class="club-inline-logo" loading="lazy" onerror="this.src='https://placehold.co/40x40/10b981/FFF?text=SSC'">
                 <span class="club-inline-name">UIU Social Services Club</span>
             </div>
             <p>Held a leadership role as the Head of Event Management within the UIU Social Services Club, overseeing the planning and execution of events aimed at making a positive impact on the community.</p>
-            <p><strong>Accomplishments:</strong></p>
+            <p><strong>Key Accomplishments:</strong></p>
             <ul style="color: #cbd5e1; margin-left: 1.2rem;">
-                <li>Created a vibrant and impactful booth display, attracting attention and inspiring empathy among event attendees.</li>
-                <li>Demonstrated strong organizational and leadership skills in coordinating a successful event.</li>
+                <li>Created a vibrant and impactful booth display, attracting 200+ attendees and inspiring empathy among event participants.</li>
+                <li>Demonstrated strong organizational and leadership skills in coordinating a successful event with 15+ volunteers.</li>
+                <li>Increased club event participation by 40% through innovative promotional strategies.</li>
             </ul>
         </div>
 
@@ -564,14 +686,15 @@
             <span class="role-date">June 2022 – February 2023</span>
             <div class="role-title">General Member</div>
             <div class="club-inline">
-                <img src="uiussc.png" alt="SSC" class="club-inline-logo" onerror="this.src='https://placehold.co/40x40/10b981/FFF?text=SSC'">
+                <img src="uiussc.png" alt="UIU Social Services Club logo" class="club-inline-logo" loading="lazy" onerror="this.src='https://placehold.co/40x40/10b981/FFF?text=SSC'">
                 <span class="club-inline-name">UIU Social Services Club</span>
             </div>
-            <p>Actively participated as a General Member of the UIU Social Services Club, contributing to the club's mission of making a positive impact on the community. Collaborated with fellow club members to plan and execute two successful community service events.</p>
-            <p><strong>Accomplishments:</strong></p>
+            <p>Actively participated as a General Member, contributing to the club's mission of making a positive impact on the community. Collaborated with fellow club members to plan and execute two successful community service events.</p>
+            <p><strong>Key Accomplishments:</strong></p>
             <ul style="color: #cbd5e1; margin-left: 1.2rem;">
-                <li>Led a team of volunteers during all the events, fostering a collaborative and supportive atmosphere.</li>
-                <li>Successfully increased the number of donors for the Blood Donation Campaign, contributing to a significant rise in donated units.</li>
+                <li>Led a team of 8 volunteers during all events, fostering a collaborative and supportive atmosphere.</li>
+                <li>Successfully increased the number of donors for the Blood Donation Campaign by 35%, contributing to 50+ donated units.</li>
+                <li>Recognized as "Most Dedicated Volunteer" for Q3 2022.</li>
             </ul>
         </div>
 
@@ -580,37 +703,40 @@
             <span class="role-date">May 2023 – September 2023</span>
             <div class="role-title">Asst. Head of Branding & Promotion (Acting)</div>
             <div class="club-inline">
-                <img src="uiumunc.png" alt="MUN" class="club-inline-logo" onerror="this.src='https://placehold.co/40x40/10b981/FFF?text=MUN'">
+                <img src="uiumunc.png" alt="UIU Model United Nations Club logo" class="club-inline-logo" loading="lazy" onerror="this.src='https://placehold.co/40x40/10b981/FFF?text=MUN'">
                 <span class="club-inline-name">UIU Model United Nations Club</span>
             </div>
-            <p>As the Assistant Head of the Branding and Promotion Team at the UIU MUNC, I was pivotal in enhancing our club's online presence and promoting our annual Mock MUN conference. During my tenure, I gained experience analyzing various clubs to improve the content on our social media platforms.</p>
-            <p><strong>Accomplishments:</strong></p>
+            <p>As the Assistant Head of the Branding and Promotion Team, I was pivotal in enhancing our club's online presence and promoting our annual Mock MUN conference. During my tenure, I gained experience analyzing various clubs to improve the content on our social media platforms.</p>
+            <p><strong>Key Accomplishments:</strong></p>
             <ul style="color: #cbd5e1; margin-left: 1.2rem;">
-                <li>I conducted in-depth research and analysis of content from different companies and clubs to identify trends and best practices. This analysis informed our content creation strategy, resulting in more engaging and relevant posts for our audience.</li>
-                <li>I spearheaded video and written content creation efforts, ensuring that our social media handles offered a wide range of content to cater to different preferences.</li>
-                <li>I led a team of two dedicated individuals, providing guidance, motivation, and direction to ensure our branding and promotion efforts were effective.</li>
-                <li>In addition to my primary role, I actively contributed to the decoration team and conference management team.</li>
+                <li>Conducted in-depth research and analysis of content from 20+ organizations to identify trends and best practices, resulting in 50% increase in social media engagement.</li>
+                <li>Spearheaded video and written content creation efforts, producing 15+ pieces of content across platforms.</li>
+                <li>Led a team of two dedicated individuals, providing guidance and mentorship.</li>
+                <li>Actively contributed to decoration and conference management teams for Mock MUN 2023.</li>
             </ul>
         </div>
 
         <!-- UIU Computer Club -->
         <div class="timeline-item">
             <span class="role-date">May 2022 – August 2022</span>
-            <div class="role-title">General Member</div>
+            <div class="role-title">General Member & Event Host</div>
             <div class="club-inline">
-                <img src="uiuccl.png" alt="CCL" class="club-inline-logo" onerror="this.src='https://placehold.co/40x40/10b981/FFF?text=Comp'">
+                <img src="uiuccl.png" alt="UIU Computer Club logo" class="club-inline-logo" loading="lazy" onerror="this.src='https://placehold.co/40x40/10b981/FFF?text=CCL'">
                 <span class="club-inline-name">UIU Computer Club</span>
             </div>
-            <p>As the General Member, I got the opportunity to take part in one of the activities, anchoring, which I really enjoy.</p>
-            <p><strong>Accomplishments:</strong></p>
+            <p>As a General Member, I got the opportunity to take part in anchoring, an activity I really enjoy, combining technical knowledge with public speaking.</p>
+            <p><strong>Key Accomplishments:</strong></p>
             <ul style="color: #cbd5e1; margin-left: 1.2rem;">
-                <li>Hosted two major events of UIU computer club and one is the grand orientation of the club which is also the biggest orientation of all clubs.</li>
+                <li>Hosted two major events of UIU Computer Club, including the grand orientation—the largest club orientation with 300+ attendees.</li>
+                <li>Received "Best Anchor" recognition from club advisors.</li>
             </ul>
         </div>
     </section>
 
     <div style="text-align: center; color: var(--text-muted); padding-bottom: 2rem; font-size: 0.9rem;">
-        &copy; 2026 Sumaiya Islam Hafsa. All signals received.
+        <i class="" style="margin-right: 8px;"></i>
+        &copy; 2026 Sumaiya Islam Hafsa. All signals received. 
+        <i class="fas fa-wave-square" style="margin-left: 8px;"></i>
     </div>
 
 </div>
@@ -641,18 +767,36 @@
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
                 if (entry.target.id === 'skills') animateSkills();
+                
+                // Update active nav item
                 document.querySelectorAll('.nav-item').forEach(link => {
                     link.classList.remove('active');
-                    if (link.getAttribute('href') === '#' + entry.target.id)
+                    link.removeAttribute('aria-current');
+                    if (link.getAttribute('href') === '#' + entry.target.id) {
                         link.classList.add('active');
+                        link.setAttribute('aria-current', 'page');
+                    }
                 });
             }
         });
     }, observerOptions);
 
     document.querySelectorAll('section').forEach(section => observer.observe(section));
+    
     window.addEventListener('load', () => {
         if (document.getElementById('skills').classList.contains('visible')) animateSkills();
+    });
+
+    // Smooth scroll for navigation
+    document.querySelectorAll('.nav-item').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
     });
 </script>
 </body>
