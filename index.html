@@ -67,6 +67,126 @@
             position: relative;
         }
 
+        /* ===== PREMIUM SIH PRELOADER WITH COMMUNICATION THEME ===== */
+        #sih-preloader {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #020617;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            z-index: 99999;
+            transition: opacity 0.2s ease-out, visibility 0.2s;
+        }
+
+        #sih-preloader.preloader-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .pulse-container {
+            position: relative;
+            width: 120px; height: 120px;
+            display: flex; justify-content: center; align-items: center;
+        }
+
+        .signal-pulse {
+            position: absolute;
+            width: 100%; height: 100%;
+            border: 2px solid #3b82f6;
+            border-radius: 50%;
+            animation: signal-expand 1.5s infinite;
+            opacity: 0;
+        }
+
+        .signal-pulse:nth-child(2) {
+            border-color: #10b981;
+            animation-delay: 0.3s;
+        }
+
+        @keyframes signal-expand {
+            0% { transform: scale(0.4); opacity: 0; }
+            30% { opacity: 0.5; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 5px #3b82f6; }
+            50% { text-shadow: 0 0 15px #10b981; }
+            100% { text-shadow: 0 0 5px #3b82f6; }
+        }
+
+        .loader-logo-text {
+            font-family: 'Arial', sans-serif;
+            font-weight: 900;
+            font-size: 2.5rem;
+            color: #3b82f6;
+            z-index: 2;
+            animation: textGlow 1.5s infinite;
+        }
+
+        /* Signal Strength Bars */
+        .signal-strength {
+            display: flex;
+            gap: 5px;
+            margin-top: 20px;
+            justify-content: center;
+            height: 40px;
+            align-items: flex-end;
+        }
+
+        .signal-bar {
+            width: 8px;
+            height: 10px;
+            background: #2d3748;
+            border-radius: 2px;
+            transition: all 0.1s ease;
+        }
+
+        /* Frequency Scanner */
+        .freq-scanner {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: #3b82f6;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            animation: scan 0.3s infinite;
+        }
+
+        @keyframes scan {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        .tech-stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            color: #94a3b8;
+        }
+
+        .stat-item-small {
+            text-align: center;
+            min-width: 50px;
+        }
+
+        .stat-value {
+            color: #10b981;
+            font-weight: bold;
+            font-size: 0.7rem;
+        }
+
+        .loader-status {
+            margin-top: 15px;
+            color: #94a3b8;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
         /* Scroll progress bar */
         .scroll-progress {
             position: fixed;
@@ -505,78 +625,6 @@
             color: var(--posh-white);
         }
 
-        /* Loading animation */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-deep);
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-        }
-
-        .loading-screen.fade-out {
-            opacity: 0;
-        }
-
-        .loader {
-            text-align: center;
-        }
-
-        .loader i {
-            font-size: 3rem;
-            color: var(--emerald);
-            margin-bottom: 1rem;
-        }
-
-        .loader p {
-            font-family: var(--font-tech);
-            color: var(--royal-blue);
-            margin-bottom: 1rem;
-        }
-
-        .signal-bars {
-            display: flex;
-            justify-content: center;
-            gap: 4px;
-            margin-top: 1rem;
-        }
-
-        .signal-bars span {
-            display: inline-block;
-            width: 4px;
-            height: 20px;
-            background: var(--royal-blue);
-            margin: 0 2px;
-            animation: signal 1s infinite;
-        }
-
-        .signal-bars span:nth-child(2) { 
-            animation-delay: 0.2s; 
-            height: 30px; 
-            background: var(--emerald);
-        }
-        .signal-bars span:nth-child(3) { 
-            animation-delay: 0.4s; 
-            height: 40px; 
-        }
-        .signal-bars span:nth-child(4) { 
-            animation-delay: 0.6s; 
-            height: 50px; 
-            background: var(--emerald);
-        }
-
-        @keyframes signal {
-            0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
-            50% { opacity: 1; transform: scaleY(1.2); }
-        }
-
         /* Mobile layout */
         @media (max-width: 900px) {
             body { flex-direction: column; }
@@ -766,15 +814,43 @@
 </head>
 <body>
 
-<!-- Loading Animation -->
-<div class="loading-screen" id="loadingScreen">
-    <div class="loader">
-        <i class="fas fa-satellite fa-spin"></i>
-        <p>Acquiring signal...</p>
-        <div class="signal-bars">
-            <span></span><span></span><span></span><span></span>
+<!-- ===== PREMIUM SIH PRELOADER WITH COMMUNICATION THEME ===== -->
+<div id="sih-preloader">
+    <div class="pulse-container">
+        <div class="signal-pulse"></div>
+        <div class="signal-pulse"></div>
+        <div class="loader-logo-text">SIH</div>
+    </div>
+    
+    <!-- Signal Strength Bars -->
+    <div class="signal-strength">
+        <div class="signal-bar"></div>
+        <div class="signal-bar"></div>
+        <div class="signal-bar"></div>
+        <div class="signal-bar"></div>
+        <div class="signal-bar"></div>
+    </div>
+    
+    <!-- Frequency Scanner -->
+    <div class="freq-scanner">⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤</div>
+    
+    <!-- Tech Stats -->
+    <div class="tech-stats">
+        <div class="stat-item-small">
+            <div class="stat-value" id="snr-value">23dB</div>
+            <div>SNR</div>
+        </div>
+        <div class="stat-item-small">
+            <div class="stat-value" id="ber-value">1e-3</div>
+            <div>BER</div>
+        </div>
+        <div class="stat-item-small">
+            <div class="stat-value" id="freq-value">2.4G</div>
+            <div>FREQ</div>
         </div>
     </div>
+    
+    <div class="loader-status" id="status-text">SDR INIT</div>
 </div>
 
 <!-- Scroll progress bar -->
@@ -1078,11 +1154,67 @@
 </div>
 
 <script>
-    // Hide loading screen
+    // ===== ULTRA FAST COMMUNICATION PRELOADER (0.15s) =====
     window.addEventListener('load', () => {
-        setTimeout(() => {
-            document.getElementById('loadingScreen').classList.add('fade-out');
-        }, 500);
+        const preloader = document.getElementById('sih-preloader');
+        const status = document.getElementById('status-text');
+        
+        // Fast communication messages
+        const messages = [
+            "SDR INIT",
+            "FFT LOCK", 
+            "QPSK SYNC",
+            "SIGNAL ACQ"
+        ];
+        
+        // Signal strength quick flash
+        const signalBars = document.querySelectorAll('.signal-bar');
+        let flashCount = 0;
+        
+        const flashInterval = setInterval(() => {
+            flashCount++;
+            signalBars.forEach((bar, index) => {
+                if (index < flashCount % 6) {
+                    bar.style.background = 'linear-gradient(180deg, #3b82f6, #10b981)';
+                    bar.style.height = (15 + (index * 8)) + 'px';
+                } else {
+                    bar.style.background = '#2d3748';
+                    bar.style.height = '8px';
+                }
+            });
+        }, 30); // Very fast flash
+        
+        // Tech stats update
+        const snrEl = document.getElementById('snr-value');
+        const berEl = document.getElementById('ber-value');
+        const freqEl = document.getElementById('freq-value');
+        
+        const snrValues = ['18dB', '21dB', '23dB', '25dB', '28dB'];
+        const berValues = ['1e-2', '1e-3', '1e-4', '1e-5', '1e-6'];
+        const freqValues = ['2.4G', '5.8G', '1.2G', '900M', '433M'];
+        
+        let statIndex = 0;
+        const statInterval = setInterval(() => {
+            statIndex = (statIndex + 1) % 5;
+            if (snrEl) snrEl.innerText = snrValues[statIndex];
+            if (berEl) berEl.innerText = berValues[statIndex];
+            if (freqEl) freqEl.innerText = freqValues[statIndex];
+        }, 35);
+        
+        // Message sequence - super fast
+        let i = 0;
+        const messageInterval = setInterval(() => {
+            if (i < messages.length) {
+                status.innerText = messages[i];
+                i++;
+            } else {
+                clearInterval(messageInterval);
+                clearInterval(flashInterval);
+                clearInterval(statInterval);
+                // Hide preloader immediately after last message
+                preloader.classList.add('preloader-hidden');
+            }
+        }, 35); // 35ms per message = 140ms total
     });
 
     // Service Worker for PWA
