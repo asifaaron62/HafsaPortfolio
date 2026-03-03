@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sumaiya Islam Hafsa | Portfolio</title>
     
-    <!-- ===== PREMIUM SIH ICON SET ===== -->
-    <!-- Favicon (all sizes) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%233b82f6'/%3E%3Ctext x='18' y='70' font-family='Arial' font-size='48' font-weight='900' fill='white'%3ESIH%3C/text%3E%3C/svg%3E">
-    <link rel="icon" sizes="32x32" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%233b82f6'/%3E%3Ctext x='18' y='70' font-family='Arial' font-size='48' font-weight='900' fill='white'%3ESIH%3C/text%3E%3C/svg%3E">
+    <!-- ===== PREMIUM FAVICON WITH SIGNAL WAVE ===== -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%233b82f6'/%3E%3Cstop offset='100%25' stop-color='%2310b981'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23g)' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M20 35 Q35 20, 50 30 T80 25' stroke='%23ffffff' stroke-width='4' fill='none' stroke-linecap='round' opacity='0.9'/%3E%3Ctext x='22' y='68' font-family='Arial' font-size='38' font-weight='900' fill='%23ffffff'%3ESIH%3C/text%3E%3C/svg%3E">
     
     <!-- Apple Touch Icon - Premium Gradient SIH -->
     <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%233b82f6'/%3E%3Cstop offset='100%25' stop-color='%2310b981'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23g)'/%3E%3Cpath d='M25 35 Q40 25, 50 30 T75 25' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' opacity='0.8'/%3E%3Ctext x='18' y='68' font-family='Arial' font-size='42' font-weight='900' fill='white'%3ESIH%3C/text%3E%3C/svg%3E">
@@ -1154,68 +1152,74 @@
 </div>
 
 <script>
-    // ===== ULTRA FAST COMMUNICATION PRELOADER (0.15s) =====
-    window.addEventListener('load', () => {
-        const preloader = document.getElementById('sih-preloader');
-        const status = document.getElementById('status-text');
-        
-        // Fast communication messages
-        const messages = [
-            "SDR INIT",
-            "FFT LOCK", 
-            "QPSK SYNC",
-            "SIGNAL ACQ"
-        ];
-        
-        // Signal strength quick flash
-        const signalBars = document.querySelectorAll('.signal-bar');
-        let flashCount = 0;
-        
-        const flashInterval = setInterval(() => {
-            flashCount++;
-            signalBars.forEach((bar, index) => {
-                if (index < flashCount % 6) {
-                    bar.style.background = 'linear-gradient(180deg, #3b82f6, #10b981)';
-                    bar.style.height = (15 + (index * 8)) + 'px';
-                } else {
-                    bar.style.background = '#2d3748';
-                    bar.style.height = '8px';
-                }
-            });
-        }, 30); // Very fast flash
-        
-        // Tech stats update
-        const snrEl = document.getElementById('snr-value');
-        const berEl = document.getElementById('ber-value');
-        const freqEl = document.getElementById('freq-value');
-        
-        const snrValues = ['18dB', '21dB', '23dB', '25dB', '28dB'];
-        const berValues = ['1e-2', '1e-3', '1e-4', '1e-5', '1e-6'];
-        const freqValues = ['2.4G', '5.8G', '1.2G', '900M', '433M'];
-        
-        let statIndex = 0;
-        const statInterval = setInterval(() => {
-            statIndex = (statIndex + 1) % 5;
-            if (snrEl) snrEl.innerText = snrValues[statIndex];
-            if (berEl) berEl.innerText = berValues[statIndex];
-            if (freqEl) freqEl.innerText = freqValues[statIndex];
-        }, 35);
-        
-        // Message sequence - super fast
-        let i = 0;
-        const messageInterval = setInterval(() => {
-            if (i < messages.length) {
-                status.innerText = messages[i];
-                i++;
+ // ===== COMMUNICATION PRELOADER (1.00s) =====
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('sih-preloader');
+    const status = document.getElementById('status-text');
+    
+    // Extended communication messages for 1 second
+    const messages = [
+        "Initializing SDR...",
+        "Scanning frequencies...",
+        "FFT processing...",
+        "Demodulating QPSK...",
+        "SNR: 23 dB",
+        "Bit error rate: 0.001",
+        "Establishing link...",
+        "Signal acquired!"
+    ];
+    
+    // Signal strength animation - slower and smoother
+    const signalBars = document.querySelectorAll('.signal-bar');
+    let strength = 0;
+    
+    const strengthInterval = setInterval(() => {
+        strength = (strength + 1) % 5;
+        signalBars.forEach((bar, index) => {
+            if (index <= strength) {
+                bar.style.background = 'linear-gradient(180deg, #3b82f6, #10b981)';
+                bar.style.height = (12 + (index * 6)) + 'px';
             } else {
-                clearInterval(messageInterval);
-                clearInterval(flashInterval);
-                clearInterval(statInterval);
-                // Hide preloader immediately after last message
-                preloader.classList.add('preloader-hidden');
+                bar.style.background = '#2d3748';
+                bar.style.height = '8px';
             }
-        }, 35); // 35ms per message = 140ms total
-    });
+        });
+    }, 150); // Slower signal updates
+    
+    // Tech stats with more variations
+    const snrEl = document.getElementById('snr-value');
+    const berEl = document.getElementById('ber-value');
+    const freqEl = document.getElementById('freq-value');
+    
+    const snrValues = ['18dB', '21dB', '23dB', '25dB', '28dB', '30dB', '32dB', '35dB'];
+    const berValues = ['1e-2', '5e-3', '1e-3', '5e-4', '1e-4', '5e-5', '1e-5', '1e-6'];
+    const freqValues = ['2.4G', '5.8G', '1.2G', '900M', '433M', '868M', '2.1G', '3.5G'];
+    
+    let statIndex = 0;
+    const statInterval = setInterval(() => {
+        statIndex = (statIndex + 1) % 8;
+        if (snrEl) snrEl.innerText = snrValues[statIndex];
+        if (berEl) berEl.innerText = berValues[statIndex];
+        if (freqEl) freqEl.innerText = freqValues[statIndex];
+    }, 120); // Stats update every 120ms
+    
+    // Message sequence - 8 messages over 880ms
+    let i = 0;
+    const messageInterval = setInterval(() => {
+        if (i < messages.length) {
+            status.innerText = messages[i];
+            i++;
+        } else {
+            clearInterval(messageInterval);
+            clearInterval(strengthInterval);
+            clearInterval(statInterval);
+            // Wait 120ms after last message then hide
+            setTimeout(() => {
+                preloader.classList.add('preloader-hidden');
+            }, 120);
+        }
+    }, 110); // 110ms per message = 880ms total + 120ms = 1000ms (1 second)
+});
 
     // Service Worker for PWA
     if ('serviceWorker' in navigator) {
